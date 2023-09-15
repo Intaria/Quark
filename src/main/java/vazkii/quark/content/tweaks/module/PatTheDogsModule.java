@@ -23,7 +23,6 @@ import vazkii.quark.base.module.LoadModule;
 import vazkii.quark.base.module.ModuleCategory;
 import vazkii.quark.base.module.QuarkModule;
 import vazkii.quark.base.module.config.Config;
-import vazkii.quark.content.mobs.entity.Foxhound;
 import vazkii.quark.content.tweaks.ai.NuzzleGoal;
 import vazkii.quark.content.tweaks.ai.WantLoveGoal;
 
@@ -70,10 +69,6 @@ public class PatTheDogsModule extends QuarkModule {
 					} else player.swing(InteractionHand.MAIN_HAND);
 
 					WantLoveGoal.setPetTime(wolf);
-
-					if (wolf instanceof Foxhound && !player.isInWater() && !player.hasEffect(MobEffects.FIRE_RESISTANCE)
-						&& !player.getAbilities().invulnerable)
-						player.setSecondsOnFire(5);
 				}
 
 				event.setCanceled(true);

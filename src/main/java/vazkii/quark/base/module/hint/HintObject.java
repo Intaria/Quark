@@ -13,7 +13,6 @@ import net.minecraft.world.level.ItemLike;
 import vazkii.quark.base.handler.MiscUtil;
 import vazkii.quark.base.module.QuarkModule;
 import vazkii.quark.base.module.config.ConfigFlagManager;
-import vazkii.quark.content.tweaks.module.GoldToolsHaveFortuneModule;
 
 public class HintObject {
 

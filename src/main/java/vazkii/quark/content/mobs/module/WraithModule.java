@@ -67,7 +67,6 @@ public class WraithModule extends QuarkModule {
 			"entity.witch.ambient|entity.witch.hurt|entity.witch.death",
 			"entity.blaze.ambient|entity.blaze.hurt|entity.blaze.death",
 			"entity.llama.ambient|entity.llama.hurt|entity.llama.death",
-			"|quark:entity.stoneling.cry|quark:entity.stoneling.die",
 			"quark:entity.frog.idle|quark:entity.frog.hurt|quark:entity.frog.die"
 			);
 

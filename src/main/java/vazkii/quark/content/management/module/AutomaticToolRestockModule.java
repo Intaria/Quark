@@ -32,7 +32,6 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.wrapper.PlayerInvWrapper;
 import net.minecraftforge.registries.ForgeRegistries;
 import vazkii.arl.util.InventoryIIH;
-import vazkii.quark.addons.oddities.module.BackpackModule;
 import vazkii.quark.api.event.GatherToolClassesEvent;
 import vazkii.quark.base.handler.GeneralConfig;
 import vazkii.quark.base.handler.MiscUtil;
@@ -121,15 +120,6 @@ public class AutomaticToolRestockModule extends QuarkModule {
 			int lower = checkHotbar ? 0 : 9;
 			int upper = player.getInventory().items.size();
 			boolean foundInInv = crawlInventory(new PlayerInvWrapper(player.getInventory()), lower, upper, ctx);
-			
-			if(!foundInInv && ModuleLoader.INSTANCE.isModuleEnabled(BackpackModule.class)) {
-				ItemStack backpack = player.getInventory().armor.get(2);
- 				
-				if(backpack.getItem() == BackpackModule.backpack) {
-					InventoryIIH inv = new InventoryIIH(backpack);
-					crawlInventory(inv, 0, inv.getSlots(), ctx);
-				}
-			}
 		}
 	}
 			

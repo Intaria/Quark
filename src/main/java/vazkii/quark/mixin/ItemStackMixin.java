@@ -29,10 +29,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import vazkii.quark.content.client.hax.PseudoAccessorItemStack;
 import vazkii.quark.content.client.resources.AttributeSlot;
-import vazkii.quark.content.client.tooltip.AttributeTooltips;
 import vazkii.quark.content.management.module.ItemSharingModule;
-import vazkii.quark.content.tools.module.AncientTomesModule;
-import vazkii.quark.content.tweaks.module.GoldToolsHaveFortuneModule;
 
 import java.util.HashMap;
 import java.util.List;
@@ -46,20 +43,6 @@ public class ItemStackMixin implements PseudoAccessorItemStack {
 		return ItemSharingModule.createStackComponent((ItemStack) (Object) this, (MutableComponent) prev);
 	}
 
-	@ModifyReturnValue(method = "getRarity", at = @At("RETURN"))
-	private Rarity getRarity(Rarity prev) {
-		return AncientTomesModule.shiftRarity((ItemStack) (Object) this, prev);
-	}
-
-	@Inject(method = "getTooltipLines", at = @At("HEAD"))
-	private void hasTagIfBaked(Player player, TooltipFlag flag, CallbackInfoReturnable<List<Component>> cir, @Share("removedEnchantments") LocalBooleanRef ref) {
-		ItemStack self = (ItemStack) (Object) this;
-		if (!self.hasTag() && GoldToolsHaveFortuneModule.shouldShowEnchantments(self)) {
-			ref.set(true);
-			self.setTag(new CompoundTag());
-		}
-	}
-
 	@ModifyExpressionValue(method = "getTooltipLines", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;hasTag()Z", ordinal = 0))
 	private boolean hasTagIfBaked(boolean hasTag, @Share("removedEnchantments") LocalBooleanRef ref) {
 		return hasTag || ref.get();
@@ -70,17 +53,6 @@ public class ItemStackMixin implements PseudoAccessorItemStack {
 		ItemStack self = (ItemStack) (Object) this;
 		if (ref.get())
 			self.setTag(null);
-	}
-
-	@ModifyArg(method = "getTooltipLines", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;appendEnchantmentNames(Ljava/util/List;Lnet/minecraft/nbt/ListTag;)V"))
-	private ListTag hideSmallerEnchantments(ListTag tag) {
-		return GoldToolsHaveFortuneModule.hideSmallerEnchantments((ItemStack) (Object) this, tag);
-	}
-
-	@ModifyArg(method = "getTooltipLines", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;appendEnchantmentNames(Ljava/util/List;Lnet/minecraft/nbt/ListTag;)V"))
-	private List<Component> appendEnchantmentNames(List<Component> components) {
-		GoldToolsHaveFortuneModule.fakeEnchantmentTooltip((ItemStack) (Object) this, components);
-		return components;
 	}
 
 	@Unique
@@ -107,10 +79,6 @@ public class ItemStackMixin implements PseudoAccessorItemStack {
 
 	@ModifyReceiver(method = "getTooltipLines", at = @At(value = "INVOKE", target = "Lcom/google/common/collect/Multimap;isEmpty()Z", remap = false))
 	private Multimap<Attribute, AttributeModifier> overrideAttributeTooltips(Multimap<Attribute, AttributeModifier> attributes, @Local EquipmentSlot slot) {
-		if (AttributeTooltips.shouldHideAttributes()) {
-			capturedAttributes.put(AttributeSlot.fromCanonicalSlot(slot), LinkedHashMultimap.create(attributes));
-			return ImmutableMultimap.of();
-		}
 		return attributes;
 	}
 }

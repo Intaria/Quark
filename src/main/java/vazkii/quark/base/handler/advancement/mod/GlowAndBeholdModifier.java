@@ -11,7 +11,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
-import vazkii.quark.addons.oddities.inventory.slot.BackpackSlot;
 import vazkii.quark.api.IMutableAdvancement;
 import vazkii.quark.base.handler.advancement.AdvancementModifier;
 import vazkii.quark.base.module.QuarkModule;

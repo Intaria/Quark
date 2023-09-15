@@ -11,9 +11,6 @@ import vazkii.arl.network.MessageSerializer;
 import vazkii.arl.network.NetworkHandler;
 import vazkii.quark.base.Quark;
 import vazkii.quark.base.network.message.*;
-import vazkii.quark.base.network.message.oddities.HandleBackpackMessage;
-import vazkii.quark.base.network.message.oddities.MatrixEnchanterOperationMessage;
-import vazkii.quark.base.network.message.oddities.ScrollCrateMessage;
 
 import java.time.Instant;
 
@@ -35,13 +32,8 @@ public final class QuarkNetwork {
 		network.register(DoubleDoorMessage.class, NetworkDirection.PLAY_TO_SERVER);
 		network.register(HarvestMessage.class, NetworkDirection.PLAY_TO_SERVER);
 		network.register(RequestEmoteMessage.class, NetworkDirection.PLAY_TO_SERVER);
-		network.register(ChangeHotbarMessage.class, NetworkDirection.PLAY_TO_SERVER);
-		network.register(SetLockProfileMessage.class, NetworkDirection.PLAY_TO_SERVER);
 		network.register(ShareItemMessage.class, NetworkDirection.PLAY_TO_SERVER);
 
-		network.register(HandleBackpackMessage.class, NetworkDirection.PLAY_TO_SERVER);
-		network.register(MatrixEnchanterOperationMessage.class, NetworkDirection.PLAY_TO_SERVER);
-		network.register(ScrollCrateMessage.class, NetworkDirection.PLAY_TO_SERVER);
 		network.register(ScrollOnBundleMessage.class, NetworkDirection.PLAY_TO_SERVER);
 
 		network.register(DoEmoteMessage.class, NetworkDirection.PLAY_TO_CLIENT);

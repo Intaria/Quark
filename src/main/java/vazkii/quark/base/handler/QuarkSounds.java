@@ -17,25 +17,6 @@ import java.util.List;
 public class QuarkSounds {
 	private static final List<SoundEvent> REGISTRY_DEFERENCE = Lists.newArrayList();
 
-	public static final SoundEvent ENTITY_STONELING_MEEP = register("entity.stoneling.meep");
-	public static final SoundEvent ENTITY_STONELING_PURR = register("entity.stoneling.purr");
-	public static final SoundEvent ENTITY_STONELING_GIVE = register("entity.stoneling.give");
-	public static final SoundEvent ENTITY_STONELING_TAKE = register("entity.stoneling.take");
-	public static final SoundEvent ENTITY_STONELING_EAT = register("entity.stoneling.eat");
-	public static final SoundEvent ENTITY_STONELING_DIE = register("entity.stoneling.die");
-	public static final SoundEvent ENTITY_STONELING_CRY = register("entity.stoneling.cry");
-	public static final SoundEvent ENTITY_STONELING_MICHAEL = register("entity.stoneling.michael");
-
-	public static final SoundEvent ENTITY_FOXHOUND_IDLE = register("entity.foxhound.ambient");
-	public static final SoundEvent ENTITY_FOXHOUND_DIE = register("entity.foxhound.death");
-	public static final SoundEvent ENTITY_FOXHOUND_GROWL = register("entity.foxhound.growl");
-	public static final SoundEvent ENTITY_FOXHOUND_HURT = register("entity.foxhound.hurt");
-	public static final SoundEvent ENTITY_FOXHOUND_PANT = register("entity.foxhound.pant");
-	public static final SoundEvent ENTITY_FOXHOUND_SHAKE = register("entity.foxhound.shake");
-	public static final SoundEvent ENTITY_FOXHOUND_WHINE = register("entity.foxhound.whine");
-	public static final SoundEvent ENTITY_FOXHOUND_EAT = register("entity.foxhound.eat");
-	public static final SoundEvent ENTITY_FOXHOUND_CRACKLE = register("entity.foxhound.crackle");
-
 	public static final SoundEvent ENTITY_CRAB_DIE = register("entity.crab.die");
 	public static final SoundEvent ENTITY_CRAB_HURT = register("entity.crab.hurt");
 	public static final SoundEvent ENTITY_CRAB_IDLE = register("entity.crab.idle");
@@ -76,18 +57,6 @@ public class QuarkSounds {
 	public static final SoundEvent PET_NEKO = register("pet.neko");
 	public static final SoundEvent PET_SLIME = register("pet.slime");
 	public static final SoundEvent PET_WIRE = register("pet.wire");
-
-	public static final SoundEvent AMBIENT_DRIPS = register("ambient.drips");
-	public static final SoundEvent AMBIENT_OCEAN = register("ambient.ocean");
-	public static final SoundEvent AMBIENT_RAIN = register("ambient.rain");
-	public static final SoundEvent AMBIENT_WIND = register("ambient.wind");
-	public static final SoundEvent AMBIENT_FIRE = register("ambient.fire");
-	public static final SoundEvent AMBIENT_CLOCK = register("ambient.clock");
-	public static final SoundEvent AMBIENT_CRICKETS = register("ambient.crickets");
-	public static final SoundEvent AMBIENT_CHATTER = register("ambient.chatter");
-
-	public static final SoundEvent MUSIC_ENDERMOSH = register("music.endermosh");
-	public static final SoundEvent MUSIC_GLIMMERING_WEALD = register("music.glimmering_weald");
 
 	public static void start() {
 		for (SoundEvent event : REGISTRY_DEFERENCE)

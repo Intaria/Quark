@@ -18,15 +18,12 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import vazkii.quark.addons.oddities.capability.MagnetTracker;
 import vazkii.quark.api.ICustomSorting;
-import vazkii.quark.api.IMagnetTracker;
 import vazkii.quark.api.IPistonCallback;
 import vazkii.quark.api.IRuneColorProvider;
 import vazkii.quark.api.ITransferManager;
 import vazkii.quark.api.QuarkCapabilities;
 import vazkii.quark.base.Quark;
-import vazkii.quark.base.capability.dummy.DummyMagnetTracker;
 import vazkii.quark.base.capability.dummy.DummyPistonCallback;
 import vazkii.quark.base.capability.dummy.DummyRuneColor;
 import vazkii.quark.base.capability.dummy.DummySorting;
@@ -39,7 +36,6 @@ public class CapabilityHandler {
 
 		register(event, ICustomSorting.class, DummySorting::new);
 		register(event, IPistonCallback.class, DummyPistonCallback::new);
-		register(event, IMagnetTracker.class, DummyMagnetTracker::new);
 		register(event, IRuneColorProvider.class, DummyRuneColor::new);
 	}
 	
@@ -53,7 +49,6 @@ public class CapabilityHandler {
 
 	private static final ResourceLocation DROPOFF_MANAGER = new ResourceLocation(Quark.MOD_ID, "dropoff");
 	private static final ResourceLocation SORTING_HANDLER = new ResourceLocation(Quark.MOD_ID, "sort");
-	private static final ResourceLocation MAGNET_TRACKER = new ResourceLocation(Quark.MOD_ID, "magnet_tracker");
 	private static final ResourceLocation RUNE_COLOR_HANDLER = new ResourceLocation(Quark.MOD_ID, "rune_color");
 
 	@SubscribeEvent
@@ -71,19 +66,5 @@ public class CapabilityHandler {
 	public static void attachTileCapabilities(AttachCapabilitiesEvent<BlockEntity> event) {
 		if (event.getObject() instanceof ITransferManager)
 			SelfProvider.attach(DROPOFF_MANAGER, QuarkCapabilities.TRANSFER, event);
-	}
-	
-	@SubscribeEvent 
-	public static void attachWorldCapabilities(AttachCapabilitiesEvent<Level> event) {
-		Level world = event.getObject();
-		MagnetTracker tracker = new MagnetTracker(world);
-
-		event.addCapability(MAGNET_TRACKER, new ICapabilityProvider() {
-			@Nonnull
-			@Override
-			public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-				return QuarkCapabilities.MAGNET_TRACKER_CAPABILITY.orEmpty(cap, LazyOptional.of(() -> tracker));
-			}
-		});
 	}
 }

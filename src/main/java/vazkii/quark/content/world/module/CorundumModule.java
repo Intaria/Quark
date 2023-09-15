@@ -24,7 +24,6 @@ import vazkii.quark.base.module.ModuleLoader;
 import vazkii.quark.base.module.config.Config;
 import vazkii.quark.base.module.hint.Hint;
 import vazkii.quark.base.util.CorundumColor;
-import vazkii.quark.content.tools.module.BeaconRedirectionModule;
 import vazkii.quark.content.world.block.CorundumBlock;
 import vazkii.quark.content.world.block.CorundumClusterBlock;
 import vazkii.quark.content.world.undergroundstyle.CorundumStyle;
@@ -87,9 +86,6 @@ public class CorundumModule extends AbstractUndergroundStyleModule<CorundumStyle
 	@Override
 	public void addAdditionalHints(BiConsumer<Item, Component> consumer) {
 		MutableComponent comp = Component.translatable("quark.jei.hint.corundum_cluster_grow");
-
-		if(ModuleLoader.INSTANCE.isModuleEnabled(BeaconRedirectionModule.class))
-			comp = comp.append(" ").append(Component.translatable("quark.jei.hint.corundum_cluster_redirect"));
 
 		for(Block block : clusters)
 			consumer.accept(block.asItem(), comp);

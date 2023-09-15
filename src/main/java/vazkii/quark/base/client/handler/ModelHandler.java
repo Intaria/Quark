@@ -23,14 +23,10 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import vazkii.quark.addons.oddities.client.model.BackpackModel;
 import vazkii.quark.base.Quark;
 import vazkii.quark.base.client.render.QuarkArmorModel;
 import vazkii.quark.content.mobs.client.model.CrabModel;
 import vazkii.quark.content.mobs.client.model.ForgottenHatModel;
-import vazkii.quark.content.mobs.client.model.FoxhoundModel;
-import vazkii.quark.content.mobs.client.model.ShibaModel;
-import vazkii.quark.content.mobs.client.model.StonelingModel;
 import vazkii.quark.content.mobs.client.model.ToretoiseModel;
 import vazkii.quark.content.mobs.client.model.WraithModel;
 
@@ -40,10 +36,6 @@ public class ModelHandler {
 
 	private static final Map<ModelLayerLocation, Layer> layers = new HashMap<>();
 	private static final Map<Pair<ModelLayerLocation, EquipmentSlot>, QuarkArmorModel> cachedArmors = new HashMap<>();
-
-	public static ModelLayerLocation shiba;
-	public static ModelLayerLocation foxhound;
-	public static ModelLayerLocation stoneling;
 	public static ModelLayerLocation crab;
 	public static ModelLayerLocation toretoise;
 	public static ModelLayerLocation wraith;
@@ -52,7 +44,6 @@ public class ModelHandler {
 	public static ModelLayerLocation quark_boat_chest;
 
 	public static ModelLayerLocation forgotten_hat;
-	public static ModelLayerLocation backpack;
 
 	private static boolean modelsInitted = false;
 
@@ -60,9 +51,6 @@ public class ModelHandler {
 		if(modelsInitted)
 			return;
 
-		shiba = addModel("shiba", ShibaModel::createBodyLayer, ShibaModel::new);
-		foxhound = addModel("foxhound", FoxhoundModel::createBodyLayer, FoxhoundModel::new);
-		stoneling = addModel("stoneling", StonelingModel::createBodyLayer, StonelingModel::new);
 		crab = addModel("crab", CrabModel::createBodyLayer, CrabModel::new);
 		toretoise = addModel("toretoise", ToretoiseModel::createBodyLayer, ToretoiseModel::new);
 		wraith = addModel("wraith", WraithModel::createBodyLayer, WraithModel::new);
@@ -71,7 +59,6 @@ public class ModelHandler {
 		quark_boat_chest = addModel("quark_boat_chest", () -> BoatModel.createBodyModel(true), r -> new BoatModel(r, true));
 
 		forgotten_hat = addArmorModel("forgotten_hat", ForgottenHatModel::createBodyLayer);
-		backpack = addArmorModel("backpack", BackpackModel::createBodyLayer);
 
 		modelsInitted = true;
 	}
