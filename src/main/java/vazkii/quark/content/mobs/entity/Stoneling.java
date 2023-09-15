@@ -77,7 +77,6 @@ import vazkii.quark.content.mobs.ai.ActWaryGoal;
 import vazkii.quark.content.mobs.ai.FavorBlockGoal;
 import vazkii.quark.content.mobs.ai.RunAndPoofGoal;
 import vazkii.quark.content.mobs.module.StonelingsModule;
-import vazkii.quark.content.tools.entity.rang.Pickarang;
 import vazkii.quark.content.world.module.GlimmeringWealdModule;
 
 public class Stoneling extends PathfinderMob {
@@ -299,9 +298,7 @@ public class Stoneling extends PathfinderMob {
 
 		Entity sourceEntity = source.getDirectEntity();
 
-		if (sourceEntity instanceof Pickarang pickarang)
-			return pickarang.getPiercingModifier() <= 0;
-		else if (sourceEntity instanceof AbstractArrow arrow)
+		if (sourceEntity instanceof AbstractArrow arrow)
 			return arrow.getPierceLevel() <= 0;
 		return true;
 	}

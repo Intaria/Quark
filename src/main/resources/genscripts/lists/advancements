@@ -52,18 +52,6 @@ flag=toretoise_regrow
 item=minecraft:glow_berries
 mine_fed_toretoise
 
-parent=minecraft:story/mine_diamond
-type=task
-flag=pickarang
-item=quark:pickarang
-throw_pickarang
-
-parent=quark:throw_pickarang
-type=challenge
-flag=flamerang
-item=quark:flamerang
-retreive_flamerang
-
 parent=minecraft:story/enchant_item
 type=task
 flag=ancient_tomes
@@ -81,12 +69,6 @@ type=task
 flag=beacon_redirection
 item=minecraft:beacon
 redirect_beacon
-
-parent=minecraft:adventure/root
-type=task
-flag=bottled_cloud
-item=quark:bottled_cloud
-get_bottled_cloud
 
 parent=minecraft:story/enchant_item
 type=task

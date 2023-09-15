@@ -23,7 +23,6 @@ import vazkii.quark.base.block.QuarkGlassBlock;
 import vazkii.quark.base.module.ModuleLoader;
 import vazkii.quark.base.module.QuarkModule;
 import vazkii.quark.content.world.module.CorundumModule;
-import vazkii.quark.content.world.module.SpiralSpiresModule;
 
 /**
  * @author WireSegal
@@ -66,13 +65,10 @@ public class CorundumBlock extends QuarkGlassBlock {
 	@Override
 	public void tick(@Nonnull BlockState state, @Nonnull ServerLevel worldIn, @Nonnull BlockPos pos, @Nonnull RandomSource random) {
 		if(canGrow(worldIn, pos) && random.nextInt(CorundumModule.caveCrystalGrowthChance) == 0) {
-			BlockState down = worldIn.getBlockState(pos.below());
 			BlockPos up = pos.above();
 			worldIn.setBlockAndUpdate(up, state);
 
-			if(down.getBlock() == SpiralSpiresModule.myalite_crystal && ModuleLoader.INSTANCE.isModuleEnabled(SpiralSpiresModule.class) && SpiralSpiresModule.renewableMyalite)
-				worldIn.setBlockAndUpdate(pos, SpiralSpiresModule.myalite_crystal.defaultBlockState());
-			else for(Direction d : Direction.values()) {
+			for(Direction d : Direction.values()) {
 				BlockPos offPos = up.relative(d);
 				if(worldIn.isEmptyBlock(offPos) && random.nextInt(3) == 0)
 					worldIn.setBlockAndUpdate(offPos, cluster.defaultBlockState().setValue(CorundumClusterBlock.FACING, d));

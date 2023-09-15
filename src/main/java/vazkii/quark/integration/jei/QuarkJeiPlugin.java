@@ -51,7 +51,6 @@ import vazkii.quark.content.client.tooltip.EnchantedBookTooltips;
 import vazkii.quark.content.tools.item.AncientTomeItem;
 import vazkii.quark.content.tools.module.AncientTomesModule;
 import vazkii.quark.content.tools.module.ColorRunesModule;
-import vazkii.quark.content.tools.module.PickarangModule;
 import vazkii.quark.content.tweaks.module.DiamondRepairModule;
 import vazkii.quark.content.tweaks.recipe.ElytraDuplicationRecipe;
 import vazkii.quark.content.tweaks.recipe.SlabToBlockRecipe;
@@ -147,11 +146,6 @@ public class QuarkJeiPlugin implements IModPlugin {
 		if (ModuleLoader.INSTANCE.isModuleEnabled(AncientTomesModule.class))
 			registerAncientTomeAnvilRecipes(registration, factory);
 
-		if (ModuleLoader.INSTANCE.isModuleEnabled(PickarangModule.class)) {
-			registerPickarangAnvilRepairs(PickarangModule.pickarang, Items.DIAMOND, registration, factory);
-			registerPickarangAnvilRepairs(PickarangModule.flamerang, Items.NETHERITE_INGOT, registration, factory);
-		}
-
 		if (ModuleLoader.INSTANCE.isModuleEnabled(ColorRunesModule.class))
 			registerRuneAnvilRecipes(registration, factory);
 
@@ -227,7 +221,7 @@ public class QuarkJeiPlugin implements IModPlugin {
 			displayItems = Stream.of(Items.DIAMOND_SWORD, Items.DIAMOND_PICKAXE, Items.DIAMOND_AXE,
 					Items.DIAMOND_SHOVEL, Items.DIAMOND_HOE, Items.DIAMOND_HELMET, Items.DIAMOND_CHESTPLATE,
 					Items.DIAMOND_LEGGINGS, Items.DIAMOND_BOOTS, Items.ELYTRA, Items.SHIELD, Items.BOW, Items.CROSSBOW,
-					Items.TRIDENT, Items.FISHING_ROD, Items.SHEARS, PickarangModule.pickarang).map(ItemStack::new);
+					Items.TRIDENT, Items.FISHING_ROD, Items.SHEARS).map(ItemStack::new);
 		}
 
 		List<ItemStack> used = displayItems
@@ -259,23 +253,6 @@ public class QuarkJeiPlugin implements IModPlugin {
 			return stack;
 		}
 		return EnchantmentHelper.enchantItem(random, stack, 25, false);
-	}
-
-	private void registerPickarangAnvilRepairs(Item pickarang, Item repairMaterial, @Nonnull IRecipeRegistration registration, @Nonnull IVanillaRecipeFactory factory) {
-		//Repair ratios taken from JEI anvil maker
-		ItemStack nearlyBroken = new ItemStack(pickarang);
-		nearlyBroken.setDamageValue(nearlyBroken.getMaxDamage());
-		ItemStack veryDamaged = nearlyBroken.copy();
-		veryDamaged.setDamageValue(veryDamaged.getMaxDamage() * 3 / 4);
-		ItemStack damaged = nearlyBroken.copy();
-		damaged.setDamageValue(damaged.getMaxDamage() * 2 / 4);
-
-		IJeiAnvilRecipe materialRepair = factory.createAnvilRecipe(nearlyBroken,
-				Collections.singletonList(new ItemStack(repairMaterial)), Collections.singletonList(veryDamaged));
-		IJeiAnvilRecipe toolRepair = factory.createAnvilRecipe(veryDamaged,
-				Collections.singletonList(veryDamaged), Collections.singletonList(damaged));
-
-		registration.addRecipes(RecipeTypes.ANVIL, Arrays.asList(materialRepair, toolRepair));
 	}
 
 	private void registerInfluenceRecipes(@Nonnull IRecipeRegistration registration) {

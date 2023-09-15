@@ -26,11 +26,6 @@ public class QuarkSounds {
 	public static final SoundEvent ENTITY_STONELING_CRY = register("entity.stoneling.cry");
 	public static final SoundEvent ENTITY_STONELING_MICHAEL = register("entity.stoneling.michael");
 
-	public static final SoundEvent ENTITY_PICKARANG_THROW = register("entity.pickarang.throw");
-	public static final SoundEvent ENTITY_PICKARANG_CLANK = register("entity.pickarang.clank");
-	public static final SoundEvent ENTITY_PICKARANG_SPARK = register("entity.pickarang.spark");
-	public static final SoundEvent ENTITY_PICKARANG_PICKUP = register("entity.pickarang.pickup");
-
 	public static final SoundEvent ENTITY_FOXHOUND_IDLE = register("entity.foxhound.ambient");
 	public static final SoundEvent ENTITY_FOXHOUND_DIE = register("entity.foxhound.death");
 	public static final SoundEvent ENTITY_FOXHOUND_GROWL = register("entity.foxhound.growl");
