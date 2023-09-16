@@ -53,13 +53,6 @@ public class CompressedBlocksModule extends QuarkModule {
 	@Config(flag = "chorus_fruit_block") public static boolean enableChorusFruitBlock = true;
 	@Config(flag = "stick_block") public static boolean enableStickBlock = true;
 
-	@Config(flag = "apple_crate") public static boolean enableAppleCrate = true;
-	@Config(flag = "golden_apple_crate") public static boolean enableGoldenAppleCrate = true;
-	@Config(flag = "potato_crate") public static boolean enablePotatoCrate = true;
-	@Config(flag = "carrot_crate") public static boolean enableCarrotCrate = true;
-	@Config(flag = "golden_carrot_crate") public static boolean enableGoldenCarrotCrate = true;
-	@Config(flag = "beetroot_crate") public static boolean enableBeetrootCrate = true;
-
 	@Config(flag = "cocoa_beans_sack") public static boolean enableCocoaBeanSack = true;
 	@Config(flag = "nether_wart_sack") public static boolean enableNetherWartSack = true;
 	@Config(flag = "gunpowder_sack") public static boolean enableGunpowderSack = true;
@@ -72,7 +65,6 @@ public class CompressedBlocksModule extends QuarkModule {
 
 	@Hint("compressed_blocks_burn_forever") public static Block charcoal_block;
 	@Hint("compressed_blocks_burn_forever") public static Block blaze_lantern;
-	@Hint("golden_apple_crate")	public static Block golden_apple_crate;
 	
 	public static Block stick_block;
 	public static Block bamboo_bundle;
@@ -94,13 +86,6 @@ public class CompressedBlocksModule extends QuarkModule {
 		pillar("cactus", MaterialColor.COLOR_GREEN, true, () -> enableCactusBlock, 50);
 		pillar("chorus_fruit", MaterialColor.COLOR_PURPLE, false, () -> enableChorusFruitBlock, 10);
 		stick_block = pillar("stick", MaterialColor.WOOD, false, () -> enableStickBlock, 300);
-
-		golden_apple_crate = crate("golden_apple", MaterialColor.GOLD, false, () -> enableGoldenAppleCrate);
-		crate("apple", MaterialColor.COLOR_RED, true, () -> enableAppleCrate);
-		crate("potato", MaterialColor.COLOR_ORANGE, true, () -> enablePotatoCrate);
-		crate("carrot", MaterialColor.TERRACOTTA_ORANGE, true, () -> enableCarrotCrate);
-		crate("golden_carrot", MaterialColor.GOLD, false, () -> enableGoldenCarrotCrate);
-		crate("beetroot", MaterialColor.COLOR_RED, true, () -> enableBeetrootCrate);
 
 		sack("cocoa_beans", MaterialColor.COLOR_BROWN, true, () -> enableCocoaBeanSack);
 		sack("nether_wart", MaterialColor.COLOR_RED, true, () -> enableNetherWartSack);
