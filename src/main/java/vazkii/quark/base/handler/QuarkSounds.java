@@ -34,8 +34,6 @@ public class QuarkSounds {
 
 	public static final SoundEvent ENTITY_SOUL_BEAD_IDLE = register("entity.soul_bead.idle");
 
-	public static final SoundEvent BLOCK_MONSTER_BOX_GROWL = register("block.monster_box.growl");
-
 	public static final SoundEvent BLOCK_PIPE_SHOOT = register("block.pipe.shoot");
 	public static final SoundEvent BLOCK_PIPE_PICKUP = register("block.pipe.pickup");
 	public static final SoundEvent BLOCK_PIPE_SHOOT_LENNY = register("block.pipe.shoot.lenny");

@@ -4,12 +4,6 @@ flag=candle_influencing
 item=minecraft:lime_candle
 influence
 
-parent=minecraft:husbandry/plant_seed
-type=goal
-flag=tiny_potato
-item=quark:tiny_potato
-pat_potato
-
 parent=minecraft:nether/obtain_blaze_rod
 type=goal
 flag=ender_watcher

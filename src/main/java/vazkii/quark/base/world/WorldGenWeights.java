@@ -9,7 +9,6 @@ public class WorldGenWeights {
 	// UNDERGROUND_DECORATION
 	public static final int BIG_STONE_CLUSTERS = 0;
 	public static final int UNDERGROUND_BIOMES = 1;
-	public static final int MONSTER_BOXES = 6;
 	
 	// TOP_LAYER_MODIFICATION
 	public static final int FAIRY_RINGS = 0;

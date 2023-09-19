@@ -97,12 +97,6 @@
       "mob/ghast/moan7"
     ]
   },
-  "block.monster_box.growl": {
-    "subtitle": "quark.subtitles.growl",
-    "sounds": [
-      "quark:block/monster_box"
-     ]
-  },
   "block.pipe.shoot": {
     "subtitle": "quark.subtitles.pipe_shoot",
     "sounds": [
