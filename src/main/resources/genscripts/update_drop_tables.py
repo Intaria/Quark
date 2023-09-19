@@ -7,7 +7,7 @@ slab_targets = []
 silk_targets = []
 named_targets = []
 
-named_pattern = re.compile(r'^(?:(?:(?:[a-z]+_)+chest)|matrix_enchanter|feeding_trough|crate)$')
+named_pattern = re.compile(r'^(?:(?:(?:[a-z]+_)+chest)|feeding_trough|crate)$')
 frame_pattern = re.compile(r'(?:[a-z]+_)+frame$')
 
 for file in os.listdir('../assets/quark/blockstates'):
