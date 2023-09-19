@@ -2,7 +2,6 @@
   "replace": false,
   "values": [
     "quark:obsidian_pressure_plate",
-    "quark:ender_watcher",
-    "quark:matrix_enchanter"
+    "quark:ender_watcher"
   ]
 }
