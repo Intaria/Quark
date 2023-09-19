@@ -5,7 +5,6 @@ import java.util.List;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import vazkii.quark.base.Quark;
 
 public enum ModuleCategory {
 

@@ -16,7 +16,6 @@
     "quark:myalite_bricks_stairs",
     "quark:myalite_bricks_vertical_slab",
     "quark:myalite_bricks_wall",
-    "quark:myalite_pillar",
-    "quark:myalite_crystal"
+    "quark:myalite_pillar"
   ]
 }

@@ -273,10 +273,5 @@
     "sounds": [
       { "name": "quark:ambient/chatter", "stream": true }
     ]
-  },
-  "music.glimmering_weald": {
-    "sounds": [
-      { "name": "quark:music/glimmering_weald", "stream": true }
-    ]
   }
 }
