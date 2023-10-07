@@ -1,14 +1,6 @@
 {
   "replace": false,
   "values": [
-    "quark:jasper",
-    "quark:limestone",
-    "quark:shale",
-    "quark:myalite",
-    "quark:polished_jasper",
-    "quark:polished_limestone",
-    "quark:polished_calcite",
-    "quark:polished_shale",
-    "quark:polished_myalite"
+    "quark:polished_calcite"
   ]
 }

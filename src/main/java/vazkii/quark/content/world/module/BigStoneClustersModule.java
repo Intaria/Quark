@@ -35,20 +35,13 @@ import vazkii.quark.content.world.gen.BigStoneClusterGenerator;
 public class BigStoneClustersModule extends QuarkModule {
 
 	@Config public static BigStoneClusterConfig calcite = new BigStoneClusterConfig(BiomeTags.IS_MOUNTAIN);
-	@Config public static BigStoneClusterConfig limestone = new BigStoneClusterConfig(Tags.Biomes.IS_SWAMP, BiomeTags.IS_OCEAN);
-	@Config public static BigStoneClusterConfig jasper = new BigStoneClusterConfig(BiomeTags.IS_BADLANDS, Tags.Biomes.IS_SANDY);
-	@Config public static BigStoneClusterConfig shale = new BigStoneClusterConfig(Tags.Biomes.IS_SNOWY);
 	
-	@Config public static BigStoneClusterConfig myalite = new AirStoneClusterConfig(DimensionConfig.end(false), 20, 6, 100, 58, 62, 
-			CompoundBiomeConfig.fromBiomeReslocs(false, "minecraft:end_highlands"))
-			.setVertical(40, 10);
-
 	@Config(description = "Blocks that stone clusters can replace. If you want to make it so it only replaces in one dimension,\n"
 			+ "do \"block|dimension\", as we do for netherrack and end stone by default.") 
 	public static List<String> blocksToReplace = Lists.newArrayList(
 			"minecraft:stone", "minecraft:andesite", "minecraft:diorite", "minecraft:granite",
 			"minecraft:netherrack|minecraft:the_nether", "minecraft:end_stone|minecraft:the_end",
-			"quark:marble", "quark:limestone", "quark:jasper", "quark:slate");
+			"quark:marble", "quark:slate");
 	
 	public static BiPredicate<Level, Block> blockReplacePredicate = (w, b) -> false;
 	
@@ -56,11 +49,6 @@ public class BigStoneClustersModule extends QuarkModule {
 	public void setup() {
 		BooleanSupplier alwaysTrue = () -> true;
 		add(calcite, Blocks.CALCITE, alwaysTrue);
-		
-		add(limestone, NewStoneTypesModule.limestoneBlock, () -> NewStoneTypesModule.enabledWithLimestone);
-		add(jasper, NewStoneTypesModule.jasperBlock, () -> NewStoneTypesModule.enabledWithJasper);
-		add(shale, NewStoneTypesModule.shaleBlock, () -> NewStoneTypesModule.enabledWithShale);
-		add(myalite, NewStoneTypesModule.myaliteBlock, () -> NewStoneTypesModule.enabledWithMyalite);
 	}
 	
 	@Override

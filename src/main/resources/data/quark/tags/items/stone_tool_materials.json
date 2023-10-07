@@ -5,13 +5,7 @@
     "#forge:cobblestone",
     "minecraft:flint",
     "minecraft:sandstone",
-    "quark:limestone",
-    "quark:polished_limestone",
     "quark:polished_calcite",
-    "quark:jasper",
-    "quark:polished_jasper",
-    "quark:shale",
-    "quark:polished_shale",
     "minecraft:blackstone"
   ]
 }
