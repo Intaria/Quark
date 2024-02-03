@@ -126,8 +126,6 @@ public class WoodSetHandler {
 		set.post = new WoodPostBlock(module, set.fence, "", false).setCondition(() -> ModuleLoader.INSTANCE.isModuleEnabledOrOverlapping(WoodenPostsModule.class));
 		set.strippedPost = new WoodPostBlock(module, set.fence, "stripped_", false).setCondition(() -> ModuleLoader.INSTANCE.isModuleEnabledOrOverlapping(WoodenPostsModule.class));
 
-		set.verticalPlanks = VerticalPlanksModule.add(name, set.planks, module).setCondition(() -> ModuleLoader.INSTANCE.isModuleEnabledOrOverlapping(VerticalPlanksModule.class));
-
 		if(hasLog) {
 			set.hollowLog = new HollowLogBlock(set.log, module, flammable).setCondition(() -> ModuleLoader.INSTANCE.isModuleEnabledOrOverlapping(HollowLogsModule.class));
 //			set.hollowWood = new HollowWoodBlock(set.wood, module, flammable).setCondition(() -> ModuleLoader.INSTANCE.isModuleEnabledOrOverlapping(HollowLogsModule.class));
@@ -199,7 +197,7 @@ public class WoodSetHandler {
 		public Block log, wood, planks, strippedLog, strippedWood,
 		slab, stairs, fence, fenceGate,
 		door, trapdoor, button, pressurePlate, sign, wallSign,
-		bookshelf, ladder, post, strippedPost, verticalPlanks,
+		bookshelf, ladder, post, strippedPost,
 		hollowLog;
 
 		public Item signItem, boatItem, chestBoatItem;
