@@ -62,7 +62,6 @@
     "client.ForgeGuiMixin",
     "client.GuiMixin",
     "client.HumanoidArmorLayerMixin",
-    "client.HumanoidModelMixin",
     "client.ItemBlockRenderTypesMixin",
     "client.ItemRendererMixin",
     "client.LoomScreenMixin",

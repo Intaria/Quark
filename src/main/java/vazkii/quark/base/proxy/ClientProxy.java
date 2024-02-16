@@ -21,8 +21,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import vazkii.quark.base.Quark;
 import vazkii.quark.base.client.config.IngameConfigHandler;
 import vazkii.quark.base.client.config.external.ExternalConfigHandler;
-import vazkii.quark.base.client.config.screen.QuarkConfigHomeScreen;
-import vazkii.quark.base.handler.ContributorRewardHandler;
 import vazkii.quark.base.handler.DyeHandler;
 import vazkii.quark.base.handler.RenderLayerHandler;
 import vazkii.quark.base.handler.WoodSetHandler;
@@ -51,8 +49,6 @@ public class ClientProxy extends CommonProxy {
 		super.start();
 
 		ModuleLoader.INSTANCE.clientStart();
-
-		ModLoadingContext.get().registerExtensionPoint(ConfigScreenFactory.class, () -> new ConfigScreenFactory((minecraft, screen) -> new QuarkConfigHomeScreen(screen)));
 
 		copyProgrammerArtIfMissing();
 
@@ -143,12 +139,6 @@ public class ClientProxy extends CommonProxy {
 			}
 		}
 		return InteractionResult.PASS;
-	}
-
-	@Override
-	protected void initContributorRewards() {
-		ContributorRewardHandler.getLocalName();
-		super.initContributorRewards();
 	}
 
 	@Override

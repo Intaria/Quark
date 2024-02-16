@@ -69,7 +69,6 @@ public class CommonProxy {
 		BrewingHandler.setup();
 
 		ModuleLoader.INSTANCE.setup(event);
-		initContributorRewards();
 
 		WoodSetHandler.setup(event);
 		ToolInteractionHandler.addModifiers();
@@ -110,10 +109,6 @@ public class CommonProxy {
 	 */
 	public InteractionResult clientUseItem(Player player, Level level, InteractionHand hand, BlockHitResult hit) {
 		return InteractionResult.PASS;
-	}
-
-	protected void initContributorRewards() {
-		ContributorRewardHandler.init();
 	}
 
 	public IConfigCallback getConfigCallback() {

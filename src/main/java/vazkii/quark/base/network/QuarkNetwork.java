@@ -31,12 +31,10 @@ public final class QuarkNetwork {
 		network.register(InventoryTransferMessage.class, NetworkDirection.PLAY_TO_SERVER);
 		network.register(DoubleDoorMessage.class, NetworkDirection.PLAY_TO_SERVER);
 		network.register(HarvestMessage.class, NetworkDirection.PLAY_TO_SERVER);
-		network.register(RequestEmoteMessage.class, NetworkDirection.PLAY_TO_SERVER);
 		network.register(ShareItemMessage.class, NetworkDirection.PLAY_TO_SERVER);
 
 		network.register(ScrollOnBundleMessage.class, NetworkDirection.PLAY_TO_SERVER);
 
-		network.register(DoEmoteMessage.class, NetworkDirection.PLAY_TO_CLIENT);
 		network.register(EditSignMessage.class, NetworkDirection.PLAY_TO_CLIENT);
 		network.register(UpdateTridentMessage.class, NetworkDirection.PLAY_TO_CLIENT);
 	}

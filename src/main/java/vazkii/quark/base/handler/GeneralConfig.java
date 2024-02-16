@@ -34,12 +34,6 @@ public class GeneralConfig {
 			"de.markusbordihn.dailyrewards.client.screen.RewardScreen"
 			);
 
-	@Config(name = "Enable 'q' Button")
-	public static boolean enableQButton = true;
-
-	@Config(name = "'q' Button on the Right")
-	public static boolean qButtonOnRight = false;
-
 	@Config
 	public static boolean disableQMenuEffects = false;
 
