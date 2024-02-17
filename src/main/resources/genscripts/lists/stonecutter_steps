@@ -54,9 +54,6 @@ marble_bricks_stairs
 marble_bricks_slab
 marble_bricks_vertical_slab
 marble_bricks_wall
-suff=rough_stonecutting
-suff=polished_stonecutting
-suff=rough_stonecutting
 suff=polished_stonecutting
 flag=slate
 in=quark:slate
@@ -86,5 +83,3 @@ basalt_bricks_stairs
 basalt_bricks_slab
 basalt_bricks_vertical_slab
 basalt_bricks_wall
-suff=rough_stonecutting
-suff=polished_stonecutting

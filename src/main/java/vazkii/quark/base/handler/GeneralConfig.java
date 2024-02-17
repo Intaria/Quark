@@ -34,9 +34,6 @@ public class GeneralConfig {
 			"de.markusbordihn.dailyrewards.client.screen.RewardScreen"
 			);
 
-	@Config
-	public static boolean disableQMenuEffects = false;
-
 	@Config(description = "Disable this to turn off the quark system that makes features turn off when specified mods with the same content are loaded")
 	public static boolean useAntiOverlap = true;
 
