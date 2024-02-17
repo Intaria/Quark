@@ -1,24 +1,15 @@
 {
   "replace": false,
   "values": [
-    "quark:andesite_bricks_wall",
     "quark:blackstone_bricks_wall",
     "quark:blue_nether_bricks_wall",
-    "quark:calcite_bricks_wall",
-    "quark:calcite_wall",
     "quark:cobblestone_bricks_wall",
-    "quark:diorite_bricks_wall",
     "quark:dirt_bricks_wall",
-    "quark:dripstone_block_wall",
-    "quark:dripstone_bricks_wall",
-    "quark:granite_bricks_wall",
     "quark:mossy_cobblestone_bricks_wall",
     "quark:netherrack_bricks_wall",
     "quark:red_sandstone_bricks_wall",
     "quark:sandstone_bricks_wall",
     "quark:soul_sandstone_bricks_wall",
-    "quark:soul_sandstone_wall",
-    "quark:tuff_bricks_wall",
-    "quark:tuff_wall"
+    "quark:soul_sandstone_wall"
   ]
 }
