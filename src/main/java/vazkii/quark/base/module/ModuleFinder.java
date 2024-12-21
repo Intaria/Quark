@@ -42,7 +42,6 @@ public final class ModuleFinder {
 				throw new RuntimeException("Invalid module name " + name);
 			
 			Class<?> clazz = Class.forName(name, false, Quark.class.getClassLoader());
-			Quark.LOG.info("Found Quark module class " + name);
 			
 			QuarkModule moduleObj = (QuarkModule) clazz.getDeclaredConstructor().newInstance();
 

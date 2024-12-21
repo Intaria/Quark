@@ -1,9 +1,3 @@
-parent=minecraft:story/enchant_item
-type=goal
-flag=candle_influencing
-item=minecraft:lime_candle
-influence
-
 parent=minecraft:nether/obtain_blaze_rod
 type=goal
 flag=ender_watcher
@@ -34,18 +28,6 @@ flag=toretoise_regrow
 item=minecraft:glow_berries
 mine_fed_toretoise
 
-parent=quark:overlevel_enchant
-type=challenge
-flag=deepslate_tweak
-item=minecraft:deepslate
-instamine_deepslate
-
-parent=minecraft:nether/create_beacon
-type=task
-flag=beacon_redirection
-item=minecraft:beacon
-redirect_beacon
-
 parent=minecraft:story/enchant_item
 type=task
 flag=color_runes
@@ -63,12 +45,6 @@ type=goal
 flag=parrot_eggs
 item=quark:red_parrot_egg
 throw_parrot_egg
-
-parent=minecraft:adventure/kill_a_mob
-type=challenge
-flag=snow_golem_player_heads
-item=minecraft:player_head
-get_own_head
 
 parent=minecraft:husbandry/plant_seed
 type=challenge
